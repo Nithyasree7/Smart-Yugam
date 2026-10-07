@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
- 
+
         :root {
             --primary: #9B1C3D;
             --primary-dark: #6B1428;
@@ -23,21 +24,22 @@
             --success: #F4B644;
             --warning: #F4B644;
         }
- 
-        html, body {
+
+        html,
+        body {
             font-family: 'Arial', 'Segoe UI', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
             scroll-behavior: smooth;
         }
- 
+
         body {
             background: #ffffff;
             background: #ffffff;
         }
- 
 
- 
+
+
         /* ===== HEADER ===== */
         header {
             position: sticky;
@@ -51,7 +53,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 0 20px rgba(155, 28, 61, 0.2);
         }
- 
+
         .header-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -59,41 +61,41 @@
             justify-content: space-between;
             align-items: center;
         }
- 
+
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
- 
+
         .logo img {
             height: 40px;
             width: auto;
         }
- 
+
         .nav-menu {
             display: flex;
             gap: 32px;
             list-style: none;
         }
- 
+
         .nav-menu a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
+            color: var(--primary);
+            font-weight: 700;
             transition: color 0.3s;
         }
- 
+
         .nav-menu a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
- 
+
         .header-ctas {
             display: flex;
             gap: 16px;
             align-items: center;
         }
- 
+
         .btn-secondary {
             padding: 10px 20px;
             background: transparent;
@@ -104,12 +106,12 @@
             cursor: pointer;
             transition: all 0.3s;
         }
- 
+
         .btn-secondary:hover {
             background: var(--primary);
             color: white;
         }
- 
+
         .btn-primary {
             padding: 10px 24px;
             background: linear-gradient(45deg, var(--primary), var(--primary-dark));
@@ -121,12 +123,12 @@
             transition: all 0.3s;
             box-shadow: 0 0 15px rgba(155, 28, 61, 0.4);
         }
- 
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 0 25px rgba(155, 28, 61, 0.8), 0 0 40px rgba(244, 182, 68, 0.2);
         }
- 
+
         /* ===== HERO SECTION ===== */
         .hero {
             padding: 80px 48px;
@@ -134,7 +136,7 @@
             position: relative;
             overflow: hidden;
         }
- 
+
         .hero::before {
             content: '';
             position: absolute;
@@ -146,7 +148,7 @@
             border-radius: 50%;
             pointer-events: none;
         }
- 
+
         .hero::after {
             content: '';
             position: absolute;
@@ -158,7 +160,7 @@
             border-radius: 50%;
             pointer-events: none;
         }
- 
+
         .hero-content {
             max-width: 1280px;
             margin: 0 auto;
@@ -169,7 +171,7 @@
             position: relative;
             z-index: 1;
         }
- 
+
         .hero-left h1 {
             font-size: 48px;
             font-weight: 800;
@@ -181,20 +183,20 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
- 
+
         .hero-left p {
             font-size: 18px;
             color: var(--text-light);
             margin-bottom: 32px;
             line-height: 1.7;
         }
- 
+
         .hero-ctas {
             display: flex;
             gap: 16px;
             margin-bottom: 48px;
         }
- 
+
         .hero-ctas a {
             padding: 14px 32px;
             text-decoration: none;
@@ -205,21 +207,21 @@
             align-items: center;
             gap: 8px;
         }
- 
+
         .hero-ctas .btn-primary {
             padding: 14px 32px;
         }
- 
+
         .hero-ctas .btn-secondary {
             padding: 14px 32px;
         }
- 
+
         .trust-badges {
             display: flex;
             gap: 24px;
             flex-wrap: wrap;
         }
- 
+
         .badge {
             display: flex;
             align-items: center;
@@ -229,7 +231,7 @@
             border-radius: 8px;
             border: 1px solid var(--border);
         }
- 
+
         .badge-icon {
             width: 20px;
             height: 20px;
@@ -241,13 +243,13 @@
             color: white;
             font-weight: bold;
         }
- 
+
         .hero-right {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
- 
+
         .dashboard-card {
             background: #ffffff;
             border-radius: 12px;
@@ -256,7 +258,7 @@
             box-shadow: 0 0 20px rgba(155, 28, 61, 0.2), inset 0 0 20px rgba(244, 182, 68, 0.05);
             backdrop-filter: blur(10px);
         }
- 
+
         .dashboard-header {
             display: flex;
             justify-content: space-between;
@@ -265,7 +267,7 @@
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border);
         }
- 
+
         .live-badge {
             background: rgba(155, 28, 61, 0.1);
             color: var(--success);
@@ -274,29 +276,29 @@
             font-size: 12px;
             font-weight: 600;
         }
- 
+
         .stat-display {
             display: flex;
             gap: 40px;
             margin: 24px 0;
         }
- 
+
         .stat {
             flex: 1;
         }
- 
+
         .stat-number {
             font-size: 32px;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 4px;
         }
- 
+
         .stat-label {
             font-size: 14px;
             color: var(--text-light);
         }
- 
+
         /* ===== TICKER BAR ===== */
         .ticker {
             background: var(--primary);
@@ -305,18 +307,18 @@
             font-size: 14px;
             font-weight: 500;
         }
- 
+
         /* ===== SECTION HEADERS ===== */
         .section {
             padding: 80px 48px;
             position: relative;
         }
- 
+
         .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
- 
+
         .section-tag {
             display: inline-block;
             background: rgba(155, 28, 61, 0.1);
@@ -329,14 +331,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
- 
+
         .section-header h2 {
             font-size: 40px;
             font-weight: 800;
             margin-bottom: 16px;
             color: var(--text-dark);
         }
- 
+
         .section-header p {
             font-size: 16px;
             color: var(--text-light);
@@ -344,7 +346,7 @@
             margin: 0 auto;
             line-height: 1.7;
         }
- 
+
         /* ===== METRICS BANNER ===== */
         .metrics {
             display: grid;
@@ -353,7 +355,7 @@
             max-width: 1280px;
             margin: 0 auto;
         }
- 
+
         .metric-card {
             background: #ffffff;
             padding: 32px;
@@ -363,19 +365,19 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s;
         }
- 
+
         .metric-card:hover {
             border-color: var(--secondary);
             box-shadow: 0 0 20px rgba(244, 182, 68, 0.2);
         }
- 
+
         .metric-number {
             font-size: 44px;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 8px;
         }
- 
+
         .metric-label {
             font-size: 14px;
             color: var(--text-light);
@@ -383,13 +385,13 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
- 
+
         .metric-subtitle {
             font-size: 13px;
             color: var(--text-light);
             margin-top: 8px;
         }
- 
+
         /* ===== COURSE CATALOG ===== */
         .course-tabs {
             display: flex;
@@ -401,7 +403,7 @@
             margin-left: auto;
             margin-right: auto;
         }
- 
+
         .tab-btn {
             padding: 10px 24px;
             background: transparent;
@@ -412,13 +414,13 @@
             transition: all 0.3s;
             color: var(--text-dark);
         }
- 
+
         .tab-btn.active {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
- 
+
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -426,7 +428,7 @@
             max-width: 1280px;
             margin: 0 auto;
         }
- 
+
         .course-card {
             background: #ffffff;
             border-radius: 12px;
@@ -435,13 +437,13 @@
             transition: all 0.3s;
             backdrop-filter: blur(10px);
         }
- 
+
         .course-card:hover {
             transform: translateY(-4px);
             border-color: var(--secondary);
             box-shadow: 0 0 25px rgba(155, 28, 61, 0.4), 0 0 40px rgba(244, 182, 68, 0.1);
         }
- 
+
         .course-badge {
             display: inline-block;
             background: rgba(155, 28, 61, 0.1);
@@ -453,7 +455,7 @@
             text-transform: uppercase;
             margin: 16px 16px 0 16px;
         }
- 
+
         .course-title {
             font-size: 20px;
             font-weight: 700;
@@ -461,21 +463,21 @@
             margin: 12px 0;
             color: var(--text-dark);
         }
- 
+
         .course-description {
             font-size: 14px;
             color: var(--text-light);
             padding: 0 16px 16px 16px;
             line-height: 1.6;
         }
- 
+
         .tech-stack {
             padding: 16px;
             background: var(--bg-light);
             margin: 0 16px;
             border-radius: 8px;
         }
- 
+
         .tech-label {
             font-size: 12px;
             font-weight: 700;
@@ -484,13 +486,13 @@
             margin-bottom: 12px;
             letter-spacing: 0.5px;
         }
- 
+
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
- 
+
         .tech-tag {
             background: white;
             padding: 4px 12px;
@@ -500,14 +502,14 @@
             color: var(--text-dark);
             border: 1px solid var(--border);
         }
- 
+
         .course-footer {
             padding: 16px;
             display: flex;
             gap: 12px;
             border-top: 1px solid var(--border);
         }
- 
+
         .course-footer a {
             flex: 1;
             padding: 10px;
@@ -518,24 +520,24 @@
             font-size: 13px;
             transition: all 0.3s;
         }
- 
+
         .course-footer .btn-primary {
             background: var(--primary);
             color: white;
             padding: 10px;
         }
- 
+
         .course-footer .btn-secondary {
             background: transparent;
             color: var(--primary);
             border: 1px solid var(--primary);
         }
- 
+
         /* ===== B2B SECTION ===== */
         .b2b-section {
             background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
- 
+
         .pillars {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -543,14 +545,14 @@
             max-width: 1280px;
             margin: 0 auto;
         }
- 
+
         .pillar {
             background: white;
             border-radius: 12px;
             padding: 32px 24px;
             border: 1px solid var(--border);
         }
- 
+
         .pillar-icon {
             width: 48px;
             height: 48px;
@@ -563,21 +565,21 @@
             font-size: 24px;
             margin-bottom: 20px;
         }
- 
+
         .pillar h3 {
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--text-dark);
         }
- 
+
         .pillar p {
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.7;
             margin-bottom: 20px;
         }
- 
+
         .pillar-link {
             color: var(--primary);
             text-decoration: none;
@@ -587,7 +589,7 @@
             align-items: center;
             gap: 6px;
         }
- 
+
         /* ===== TESTIMONIALS ===== */
         .testimonials-grid {
             display: grid;
@@ -596,20 +598,20 @@
             max-width: 1280px;
             margin: 0 auto;
         }
- 
+
         .testimonial-card {
             background: white;
             border-radius: 12px;
             padding: 24px;
             border: 1px solid var(--border);
         }
- 
+
         .testimonial-author {
             display: flex;
             gap: 16px;
             margin-bottom: 20px;
         }
- 
+
         .author-avatar {
             width: 56px;
             height: 56px;
@@ -617,19 +619,19 @@
             background: var(--primary);
             flex-shrink: 0;
         }
- 
+
         .author-info h4 {
             font-size: 14px;
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 4px;
         }
- 
+
         .author-info p {
             font-size: 13px;
             color: var(--text-light);
         }
- 
+
         .badge-placement {
             display: inline-block;
             background: var(--success);
@@ -640,7 +642,7 @@
             font-weight: 700;
             margin-left: auto;
         }
- 
+
         .testimonial-text {
             font-size: 14px;
             color: var(--text-light);
@@ -648,19 +650,20 @@
             margin-bottom: 16px;
             font-style: italic;
         }
- 
+
         .testimonial-rating {
             display: flex;
             gap: 4px;
-            color: var(--warning);;
+            color: var(--warning);
+            ;
         }
- 
+
         /* ===== FORM SECTION ===== */
         .form-section {
             padding: 80px 48px;
             background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
         }
- 
+
         .form-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -671,7 +674,7 @@
             position: relative;
             overflow: hidden;
         }
- 
+
         .form-container::before {
             content: '';
             position: absolute;
@@ -683,26 +686,26 @@
             border-radius: 50%;
             pointer-events: none;
         }
- 
+
         .form-header {
             text-align: center;
             margin-bottom: 40px;
             position: relative;
             z-index: 1;
         }
- 
+
         .form-header .section-tag {
             margin: 0 auto 16px;
             display: inline-block;
         }
- 
+
         .form-header h2 {
             font-size: 36px;
             font-weight: 800;
             margin-bottom: 16px;
             color: var(--text-dark);
         }
- 
+
         .form-header p {
             font-size: 16px;
             color: var(--text-light);
@@ -710,23 +713,23 @@
             margin: 0 auto;
             line-height: 1.6;
         }
- 
+
         .form-group {
             position: relative;
             z-index: 1;
         }
- 
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
             margin-bottom: 24px;
         }
- 
+
         .form-row.full {
             grid-template-columns: 1fr;
         }
- 
+
         label {
             display: block;
             font-weight: 600;
@@ -734,7 +737,7 @@
             color: var(--text-dark);
             font-size: 14px;
         }
- 
+
         input[type="text"],
         input[type="email"],
         input[type="tel"],
@@ -747,7 +750,7 @@
             font-family: inherit;
             transition: all 0.3s;
         }
- 
+
         input[type="text"]:focus,
         input[type="email"]:focus,
         input[type="tel"]:focus,
@@ -756,13 +759,13 @@
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(155, 28, 61, 0.1);
         }
- 
+
         .form-actions {
             display: flex;
             gap: 16px;
             margin-top: 32px;
         }
- 
+
         .form-submit {
             flex: 1;
             padding: 14px 32px;
@@ -775,18 +778,18 @@
             cursor: pointer;
             transition: all 0.3s;
         }
- 
+
         .form-submit:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(155, 28, 61, 0.3);
         }
- 
+
         .form-submit.loading {
             opacity: 0.7;
             cursor: not-allowed;
         }
- 
+
         .payment-btn {
             flex: 1;
             padding: 14px 32px;
@@ -804,13 +807,13 @@
             gap: 8px;
             transition: all 0.3s;
         }
- 
+
         .payment-btn:hover {
             background: #9B1C3D;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(155, 28, 61, 0.3);
         }
- 
+
         .trust-strip {
             display: flex;
             gap: 24px;
@@ -822,14 +825,15 @@
             font-size: 13px;
             color: var(--text-light);
         }
- 
+
         .trust-strip span {
             display: flex;
             align-items: center;
             gap: 6px;
         }
- 
-        .success-message, .error-message {
+
+        .success-message,
+        .error-message {
             display: none;
             padding: 16px;
             border-radius: 8px;
@@ -837,26 +841,26 @@
             font-weight: 600;
             text-align: center;
         }
- 
+
         .success-message {
             background: rgba(155, 28, 61, 0.1);
             color: var(--success);
             display: block;
         }
- 
+
         .error-message {
             background: rgba(239, 68, 68, 0.1);
             color: #dc2626;
             display: block;
         }
- 
+
         /* ===== FOOTER ===== */
         footer {
             background: var(--text-dark);
             color: white;
             padding: 60px 48px 32px;
         }
- 
+
         .footer-content {
             max-width: 1280px;
             margin: 0 auto;
@@ -865,19 +869,19 @@
             gap: 40px;
             margin-bottom: 40px;
         }
- 
+
         .footer-brand h3 {
             font-size: 20px;
             margin-bottom: 16px;
         }
- 
+
         .footer-brand p {
             font-size: 14px;
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.7;
             margin-bottom: 16px;
         }
- 
+
         .footer-link {
             display: flex;
             gap: 12px;
@@ -885,7 +889,7 @@
             font-size: 13px;
             margin-bottom: 12px;
         }
- 
+
         .footer-section h4 {
             font-size: 14px;
             font-weight: 700;
@@ -893,7 +897,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
- 
+
         .footer-section a {
             display: block;
             font-size: 13px;
@@ -902,11 +906,11 @@
             text-decoration: none;
             transition: color 0.3s;
         }
- 
+
         .footer-section a:hover {
             color: white;
         }
- 
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 24px;
@@ -918,101 +922,101 @@
             flex-wrap: wrap;
             gap: 16px;
         }
- 
+
         .footer-bottom a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: color 0.3s;
         }
- 
+
         .footer-bottom a:hover {
             color: white;
         }
- 
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
- 
+
             header {
                 padding: 16px 24px;
             }
- 
+
             .header-ctas {
                 gap: 8px;
             }
- 
+
             .section {
                 padding: 48px 24px;
             }
- 
+
             .hero {
                 padding: 48px 24px;
             }
- 
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
- 
+
             .hero-left h1 {
                 font-size: 36px;
             }
- 
+
             .form-container {
                 padding: 40px 24px;
             }
- 
+
             .form-row {
                 grid-template-columns: 1fr;
             }
- 
+
             .courses-grid {
                 grid-template-columns: 1fr;
             }
- 
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
- 
+
             .section-header h2 {
                 font-size: 28px;
             }
- 
+
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
- 
+
             .stat-display {
                 flex-direction: column;
                 gap: 24px;
             }
- 
+
             .trust-strip {
                 gap: 12px;
                 justify-content: flex-start;
             }
         }
- 
+
         @media (max-width: 480px) {
             .hero-left h1 {
                 font-size: 28px;
             }
- 
+
             .form-row {
                 grid-template-columns: 1fr;
             }
- 
+
             .form-actions {
                 flex-direction: column;
             }
- 
+
             .trust-badges {
                 gap: 12px;
             }
- 
+
             .badge {
                 padding: 8px 12px;
                 font-size: 12px;
@@ -1020,12 +1024,17 @@
         }
     </style>
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
         <div class="header-container">
-            <div class="logo">
-                <img src="logo.png" alt="Logo">
+            <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+                <img src="logo.png" alt="Smart Yugam Logo" style="height: 48px; width: auto;">
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="font-size: 26px; font-weight: 800; color: var(--primary);">Smart Yugam</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--secondary); letter-spacing: 1px; margin-top: 4px;">ISO 9001:2015 CERTIFIED</span>
+                </div>
             </div>
             <nav>
                 <ul class="nav-menu">
@@ -1041,17 +1050,23 @@
             </div>
         </div>
     </header>
- 
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-left">
-                <div style="background: rgba(155, 28, 61, 0.1); padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 20px; color: var(--primary); font-size: 12px; font-weight: 700;">🚀 PLACEMENT SANDBOX</div>
+                <div
+                    style="background: rgba(155, 28, 61, 0.1); padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 20px; color: var(--primary); font-size: 12px; font-weight: 700;">
+                    🚀 PLACEMENT SANDBOX</div>
                 <h1>Campus to Corporate Bridge — Your Launch Pad for Enterprise Careers</h1>
-                <p>Intensive bootcamps, live placement dashboards, and on-campus recruitment finishing schools. From aptitude drills to full-stack deployments — we bridge the gap between college coursework and corporate expectations.</p>
+                <p>Intensive bootcamps, live placement dashboards, and on-campus recruitment finishing schools. From
+                    aptitude drills to full-stack deployments — we bridge the gap between college coursework and
+                    corporate expectations.</p>
                 <div class="hero-ctas">
-                    <a href="#form" class="btn-primary" style="display: inline-flex; gap: 8px; align-items: center;">Explore Programs →</a>
-                    <a href="#form" class="btn-secondary" style="display: inline-flex; gap: 8px; align-items: center;">📞 Schedule Demo</a>
+                    <a href="#form" class="btn-primary"
+                        style="display: inline-flex; gap: 8px; align-items: center;">Explore Programs →</a>
+                    <a href="#form" class="btn-secondary"
+                        style="display: inline-flex; gap: 8px; align-items: center;">📞 Schedule Demo</a>
                 </div>
                 <div class="trust-badges">
                     <div class="badge">
@@ -1072,7 +1087,8 @@
                 <div class="dashboard-card">
                     <div class="dashboard-header">
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="display: inline-block; width: 12px; height: 12px; background: var(--success); border-radius: 50%;"></span>
+                            <span
+                                style="display: inline-block; width: 12px; height: 12px; background: var(--success); border-radius: 50%;"></span>
                             <span style="font-weight: 600; font-size: 13px;">Live Placements Feed</span>
                         </div>
                         <div class="live-badge">LIVE NOW</div>
@@ -1088,19 +1104,20 @@
                         </div>
                     </div>
                     <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin: 16px 0;">
-                        <div style="font-size: 12px; color: var(--text-light); font-weight: 600; margin-bottom: 12px;">Recent Placements</div>
+                        <div style="font-size: 12px; color: var(--text-light); font-weight: 600; margin-bottom: 12px;">
+                            Recent Placements</div>
                         <div style="padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px;">
-                            <strong>Vignesh R</strong> placed at Accenture as Digital Specialist Engineer
+                            <strong>Nithya Sree S</strong> Placed as a Technical Trainer Upto 4.5LPA
                         </div>
                         <div style="padding: 12px 0; font-size: 13px;">
-                            <strong>Priya M</strong> placed at Cognizant GenC with ₹8.5 LPA
+                            <strong>Deepak</strong> CAD Trainer Placed upto 4LPA
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
+
     <!-- METRICS SECTION -->
     <section class="section">
         <div class="metrics">
@@ -1126,27 +1143,29 @@
             </div>
         </div>
     </section>
- 
+
     <!-- COURSE CATALOG -->
     <section class="section" id="programs">
         <div class="section-header">
             <div class="section-tag">🎓 Dedicated Course Catalog</div>
             <h2>Master Industry-Grade Skills in 6 Specialized Tracks</h2>
-            <p>From full-stack architecture to generative AI orchestration, each program pairs deep technical fundamentals with live placement bootcamps.</p>
+            <p>From full-stack architecture to generative AI orchestration, each program pairs deep technical
+                fundamentals with live placement bootcamps.</p>
         </div>
- 
+
         <div class="course-tabs">
             <button class="tab-btn active">All Tracks</button>
             <button class="tab-btn">Engineering</button>
             <button class="tab-btn">AI & Data Science</button>
             <button class="tab-btn">Design & CAD</button>
         </div>
- 
+
         <div class="courses-grid">
             <div class="course-card">
                 <span class="course-badge">8 Weeks</span>
                 <h3 class="course-title">Java Full Stack Development</h3>
-                <p class="course-description">End-to-end enterprise software architecture. Covers object-oriented programming, modern containerization, and relational data layers.</p>
+                <p class="course-description">End-to-end enterprise software architecture. Covers object-oriented
+                    programming, modern containerization, and relational data layers.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Tech Stack Mastered</div>
                     <div class="tech-tags">
@@ -1163,11 +1182,12 @@
                     <a href="#" class="btn-secondary">View Syllabus</a>
                 </div>
             </div>
- 
+
             <div class="course-card">
                 <span class="course-badge">8 Weeks</span>
                 <h3 class="course-title">Python Full Stack Development</h3>
-                <p class="course-description">Rapid API architecture and responsive web suites utilizing asynchronous modern Python engines with reactive interfaces.</p>
+                <p class="course-description">Rapid API architecture and responsive web suites utilizing asynchronous
+                    modern Python engines with reactive interfaces.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Tech Stack Mastered</div>
                     <div class="tech-tags">
@@ -1184,11 +1204,12 @@
                     <a href="#" class="btn-secondary">View Syllabus</a>
                 </div>
             </div>
- 
+
             <div class="course-card">
                 <span class="course-badge">6 Weeks</span>
                 <h3 class="course-title">Generative AI & Prompt Engineering</h3>
-                <p class="course-description">Next-gen artificial intelligence orchestration. Build customized retrieval augmented generation (RAG) and autonomous LLM agents.</p>
+                <p class="course-description">Next-gen artificial intelligence orchestration. Build customized retrieval
+                    augmented generation (RAG) and autonomous LLM agents.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Tech Stack Mastered</div>
                     <div class="tech-tags">
@@ -1205,11 +1226,12 @@
                     <a href="#" class="btn-secondary">View Syllabus</a>
                 </div>
             </div>
- 
+
             <div class="course-card">
                 <span class="course-badge">10 Weeks</span>
                 <h3 class="course-title">UI/UX Development & Design</h3>
-                <p class="course-description">Transform conceptual product thinking into high-conversion user journeys, interactive Figma prototypes, and clean atomic design tokens.</p>
+                <p class="course-description">Transform conceptual product thinking into high-conversion user journeys,
+                    interactive Figma prototypes, and clean atomic design tokens.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Tech Stack Mastered</div>
                     <div class="tech-tags">
@@ -1226,11 +1248,12 @@
                     <a href="#" class="btn-secondary">View Syllabus</a>
                 </div>
             </div>
- 
+
             <div class="course-card">
                 <span class="course-badge">12 Weeks</span>
                 <h3 class="course-title">CAD / Engineering Design</h3>
-                <p class="course-description">Industrial grade physical modeling for Mechanical, Mechatronics, and Civil students. Parametric 3D drafting and tolerance analysis.</p>
+                <p class="course-description">Industrial grade physical modeling for Mechanical, Mechatronics, and Civil
+                    students. Parametric 3D drafting and tolerance analysis.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Tech Stack Mastered</div>
                     <div class="tech-tags">
@@ -1247,11 +1270,12 @@
                     <a href="#" class="btn-secondary">View Syllabus</a>
                 </div>
             </div>
- 
+
             <div class="course-card">
                 <span class="course-badge">4 Weeks</span>
                 <h3 class="course-title">Aptitude & Campus Recruitment (CRT)</h3>
-                <p class="course-description">Comprehensive readiness drill for corporate entrance evaluations. Speed arithmetic shortcuts, logical deductive matrices, and interview simulations.</p>
+                <p class="course-description">Comprehensive readiness drill for corporate entrance evaluations. Speed
+                    arithmetic shortcuts, logical deductive matrices, and interview simulations.</p>
                 <div class="tech-stack">
                     <div class="tech-label">Modules Covered</div>
                     <div class="tech-tags">
@@ -1270,55 +1294,63 @@
             </div>
         </div>
     </section>
- 
+
     <!-- B2B INSTITUTIONAL SECTION -->
     <section class="section b2b-section" id="institution">
         <div class="section-header">
             <div class="section-tag">🏢 For Colleges & Institutions</div>
             <h2>Institutional Partnerships That Guarantee Placements</h2>
-            <p>We integrate directly into your campus curriculum with dedicated labs, faculty upskilling, and guaranteed corporate recruitment drives.</p>
+            <p>We integrate directly into your campus curriculum with dedicated labs, faculty upskilling, and guaranteed
+                corporate recruitment drives.</p>
         </div>
- 
+
         <div style="max-width: 1280px; margin: 0 auto; text-align: right; margin-bottom: 40px;">
-            <a href="#form" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">Schedule MoU Discussion →</a>
+            <a href="#form"
+                style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">Schedule
+                MoU Discussion →</a>
         </div>
- 
+
         <div class="pillars">
             <div class="pillar">
                 <div class="pillar-icon">📚</div>
                 <h3>On-Campus Placement Bootcamps</h3>
-                <p>Intensive 15 to 30-day finishing school sprints tailored to clear imminent campus drives. Real coding assessments, mock technical panels, and immediate resume tuning.</p>
+                <p>Intensive 15 to 30-day finishing school sprints tailored to clear imminent campus drives. Real coding
+                    assessments, mock technical panels, and immediate resume tuning.</p>
                 <a href="#" class="pillar-link">Learn More →</a>
             </div>
             <div class="pillar">
                 <div class="pillar-icon">👨‍🏫</div>
                 <h3>Faculty Development Programs (FDP)</h3>
-                <p>Equip professors and lecturers with enterprise skillsets across Generative AI, Cloud orchestration, Modern DevOps, and applied UI/UX design workflows.</p>
+                <p>Equip professors and lecturers with enterprise skillsets across Generative AI, Cloud orchestration,
+                    Modern DevOps, and applied UI/UX design workflows.</p>
                 <a href="#" class="pillar-link">Learn More →</a>
             </div>
             <div class="pillar">
                 <div class="pillar-icon">🎯</div>
                 <h3>Company-Specific CRT Modules</h3>
-                <p>Customized testing simulators calibrated for TCS NQT, Cognizant GenC, Wipro Elite, Accenture, and Zoho Level-2 Problem Solving rounds.</p>
+                <p>Customized testing simulators calibrated for TCS NQT, Cognizant GenC, Wipro Elite, Accenture, and
+                    Zoho Level-2 Problem Solving rounds.</p>
                 <a href="#" class="pillar-link">Learn More →</a>
             </div>
             <div class="pillar">
                 <div class="pillar-icon">🤝</div>
                 <h3>Formal Long-Term MoUs</h3>
-                <p>Semester-embedded credit courses, dedicated COE Labs inside your institution campus, and guaranteed placement drive invitations.</p>
+                <p>Semester-embedded credit courses, dedicated COE Labs inside your institution campus, and guaranteed
+                    placement drive invitations.</p>
                 <a href="#" class="pillar-link">Learn More →</a>
             </div>
         </div>
     </section>
- 
+
     <!-- TESTIMONIALS SECTION -->
     <section class="section" id="success">
         <div class="section-header">
             <div class="section-tag">⭐ Placement & Student Success Wall</div>
             <h2>500+ Student Stories, 87% Placement Rate</h2>
-            <p>Real transformations from campus to corporate roles across India's leading technology and financial services companies.</p>
+            <p>Real transformations from campus to corporate roles across India's leading technology and financial
+                services companies.</p>
         </div>
- 
+
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-author">
@@ -1330,13 +1362,16 @@
                     <div class="badge-placement">Accenture</div>
                 </div>
                 <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
-                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">Digital Specialist Engineer</div>
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">Digital Specialist
+                        Engineer</div>
                     <div style="font-size: 13px; color: var(--text-light);">₹6.8 LPA</div>
                 </div>
-                <p class="testimonial-text">"The live coding rounds and Spring Boot architectural sessions made the technical hackathon feel natural. Cleared the Digital Specialist Engineer track in my very first attempt!"</p>
+                <p class="testimonial-text">"The live coding rounds and Spring Boot architectural sessions made the
+                    technical hackathon feel natural. Cleared the Digital Specialist Engineer track in my very first
+                    attempt!"</p>
                 <div class="testimonial-rating">★★★★★</div>
             </div>
- 
+
             <div class="testimonial-card">
                 <div class="testimonial-author">
                     <div class="author-avatar"></div>
@@ -1350,10 +1385,12 @@
                     <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">GenC Elevate</div>
                     <div style="font-size: 13px; color: var(--text-light);">₹8.5 LPA</div>
                 </div>
-                <p class="testimonial-text">"Coming from an ECE background, I was intimidated by complex data structures. The mentorship program bridged that gap seamlessly with structured problem-solving drills."</p>
+                <p class="testimonial-text">"Coming from an ECE background, I was intimidated by complex data
+                    structures. The mentorship program bridged that gap seamlessly with structured problem-solving
+                    drills."</p>
                 <div class="testimonial-rating">★★★★★</div>
             </div>
- 
+
             <div class="testimonial-card">
                 <div class="testimonial-author">
                     <div class="author-avatar"></div>
@@ -1364,13 +1401,15 @@
                     <div class="badge-placement">Bosch</div>
                 </div>
                 <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
-                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">CAD Design Engineer</div>
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">CAD Design Engineer
+                    </div>
                     <div style="font-size: 13px; color: var(--text-light);">₹6.5 LPA</div>
                 </div>
-                <p class="testimonial-text">"The GD&T and SolidWorks industry models taught here were exactly what the technical interview committee tested. I didn't need any additional off-campus prep."</p>
+                <p class="testimonial-text">"The GD&T and SolidWorks industry models taught here were exactly what the
+                    technical interview committee tested. I didn't need any additional off-campus prep."</p>
                 <div class="testimonial-rating">★★★★★</div>
             </div>
- 
+
             <div class="testimonial-card">
                 <div class="testimonial-author">
                     <div class="author-avatar"></div>
@@ -1384,25 +1423,27 @@
                     <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">GenC Elevate</div>
                     <div style="font-size: 13px; color: var(--text-light);">₹9.2 LPA</div>
                 </div>
-                <p class="testimonial-text">"The Aptitude speed math techniques and Full-stack live projects gave me the dual advantage needed to clear Cognizant GenC Elevate with an upgraded salary tier."</p>
+                <p class="testimonial-text">"The Aptitude speed math techniques and Full-stack live projects gave me the
+                    dual advantage needed to clear Cognizant GenC Elevate with an upgraded salary tier."</p>
                 <div class="testimonial-rating">★★★★★</div>
             </div>
         </div>
     </section>
- 
+
     <!-- FORM SECTION -->
     <section class="form-section" id="form">
         <div class="form-container">
             <div class="form-header">
                 <div class="section-tag">📋 Start Your Journey Today</div>
                 <h2>Get Expert-Guided Audit & Mentorship</h2>
-                <p>Join 12,000+ students who transformed their careers. Unlock your potential with our specialized placement programs.</p>
+                <p>Join 12,000+ students who transformed their careers. Unlock your potential with our specialized
+                    placement programs.</p>
             </div>
- 
+
             <form id="leadForm">
                 <div id="successMessage" class="success-message">✓ Thank you! We'll contact you within 24 hours.</div>
                 <div id="errorMessage" class="error-message">⚠ Error submitting form. Please try again.</div>
- 
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -1413,19 +1454,20 @@
                         <input type="tel" id="phone" name="phone" placeholder="+91 98400 00000" required>
                     </div>
                 </div>
- 
+
                 <div class="form-row full">
                     <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" placeholder="your@email.com" required>
                     </div>
                 </div>
- 
+
                 <div class="form-actions">
                     <button type="submit" class="form-submit">Get Free Audit</button>
-                    <a href="https://payments.cashfree.com/forms/getaudit" target="_blank" class="payment-btn">💳 Pay for 1 Rupee Audit</a>
+                    <a href="https://payments.cashfree.com/forms/getaudit" target="_blank" class="payment-btn">💳 Pay
+                        for 1 Rupee Audit</a>
                 </div>
- 
+
                 <div class="trust-strip">
                     <span>🔒 Secure & encrypted</span>
                     <span>•</span>
@@ -1436,7 +1478,7 @@
             </form>
         </div>
     </section>
- 
+
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
@@ -1444,13 +1486,14 @@
                 <div style="width: 120px; margin-bottom: 20px;">
                     <img src="logo.png" alt="Logo" style="width: 100%; height: auto;">
                 </div>
-                <p>Empowering students across India to land corporate careers through intensive placement bootcamps, mentorship, and guaranteed job placements.</p>
+                <p>Empowering students across India to land corporate careers through intensive placement bootcamps,
+                    mentorship, and guaranteed job placements.</p>
                 <div class="footer-link" style="margin-top: 16px;">
                     <span>🏢</span>
                     <span>Based in Chennai & Coimbatore</span>
                 </div>
             </div>
- 
+
             <div class="footer-section">
                 <h4>Programs</h4>
                 <a href="#">Full Stack Engineering</a>
@@ -1459,7 +1502,7 @@
                 <a href="#">UI/UX Design</a>
                 <a href="#">Aptitude Training</a>
             </div>
- 
+
             <div class="footer-section">
                 <h4>Institution</h4>
                 <a href="#">College Tie-Ups</a>
@@ -1468,32 +1511,38 @@
                 <a href="#">Faculty Programs</a>
                 <a href="#">Apply Next Cohort</a>
             </div>
- 
+
             <div class="footer-section">
                 <h4>Our Branch Addresses</h4>
                 <div style="margin-bottom: 20px;">
                     <div style="font-weight: 700; color: #fff; margin-bottom: 8px;">Chennai Regional Office</div>
-                    <div style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 12px;">No - 161, 10th block, Mugappair East, Chennai - 600037</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 12px;">No - 161, 10th
+                        block, Mugappair East, Chennai - 600037</div>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <div style="font-weight: 700; color: #fff; margin-bottom: 8px;">Coimbatore Branch</div>
-                    <div style="font-size: 13px; color: rgba(255,255,255,0.7);">First Floor, Mayura Complex, Dr KV Kuppusamy road, Opposite to RVS CAS Backgate</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.7);">First Floor, Mayura Complex, Dr KV
+                        Kuppusamy road, Opposite to RVS CAS Backgate</div>
                 </div>
                 <div class="footer-link">
                     <span>📧</span>
-                    <div><a href="mailto:smartyugamacademy@gmail.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">smartyugamacademy@gmail.com</a></div>
+                    <div><a href="mailto:smartyugamacademy@gmail.com"
+                            style="color: rgba(255,255,255,0.7); text-decoration: none;">smartyugamacademy@gmail.com</a>
+                    </div>
                 </div>
                 <div class="footer-link">
                     <span>📱</span>
-                    <div><a href="tel:+918248553958" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91 824 855 3958</a></div>
+                    <div><a href="tel:+918248553958" style="color: rgba(255,255,255,0.7); text-decoration: none;">+91
+                            824 855 3958</a></div>
                 </div>
                 <div class="footer-link">
                     <span>🌐</span>
-                    <div><a href="https://smartyugamacademy.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">smartyugamacademy.com</a></div>
+                    <div><a href="https://smartyugamacademy.com"
+                            style="color: rgba(255,255,255,0.7); text-decoration: none;">smartyugamacademy.com</a></div>
                 </div>
             </div>
         </div>
- 
+
         <div class="footer-bottom">
             <span>&copy; 2025 Placement Academy. All rights reserved.</span>
             <div>
@@ -1505,55 +1554,55 @@
             </div>
         </div>
     </footer>
- 
+
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWTYU8RSGGedJai69Wa3eOjQGtrvYEfeH0MI578Ort1UC-FUg2xwDa4x17G_-GxfHY/exec';
- 
+
         const form = document.getElementById('leadForm');
         const submitBtn = form.querySelector('.form-submit');
         const successMsg = document.getElementById('successMessage');
         const errorMsg = document.getElementById('errorMessage');
- 
-        form.addEventListener('submit', function(e) {
+
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Hide messages
             successMsg.style.display = 'none';
             errorMsg.style.display = 'none';
-            
+
             // Get form values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
- 
+
             // Validate
             if (!name || !email || !phone) {
                 errorMsg.textContent = '⚠ Please fill all required fields.';
                 errorMsg.style.display = 'block';
                 return;
             }
- 
+
             // Disable button
             submitBtn.disabled = true;
             submitBtn.classList.add('loading');
             submitBtn.textContent = 'Submitting...';
- 
+
             // Build URL with query parameters
             const url = SCRIPT_URL + '?' + new URLSearchParams({
                 name: name,
                 email: email,
                 phone: phone
             });
- 
+
             // Critical: Use GET with no-cors, no .then(res => res.json())
             fetch(url, {
                 method: 'GET',
                 mode: 'no-cors'
             })
-            .then(() => showSuccess())
-            .catch(() => showError());
+                .then(() => showSuccess())
+                .catch(() => showError());
         });
- 
+
         function showSuccess() {
             successMsg.style.display = 'block';
             errorMsg.style.display = 'none';
@@ -1561,20 +1610,20 @@
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
             submitBtn.textContent = 'Get Free Audit';
-            
+
             // Scroll to message
             setTimeout(() => {
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
         }
- 
+
         function showError() {
             errorMsg.style.display = 'block';
             successMsg.style.display = 'none';
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
             submitBtn.textContent = 'Get Free Audit';
-            
+
             // Scroll to message
             setTimeout(() => {
                 errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1582,4 +1631,5 @@
         }
     </script>
 </body>
+
 </html>
