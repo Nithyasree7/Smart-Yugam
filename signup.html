@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Smart Yugam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1a1a1a;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(155, 28, 61, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .login-container img {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            color: #9B1C3D;
+            margin-bottom: 10px;
+        }
+
+        .login-container p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #F4B644;
+        }
+
+        .btn-primary {
+            background: #9B1C3D;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #6B1428;
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #9B1C3D;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-links {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer-links a {
+            color: #9B1C3D;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.png" alt="Smart Yugam Logo">
+        <h2>Create an Account</h2>
+        <p>Join Smart Yugam to start upskilling today</p>
+        
+        <form id="signupForm">
+            <div id="successMessage" style="display: none; background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; border: 1px solid #c8e6c9;">
+                ✅ Account created successfully!
+            </div>
+            <div id="errorMessage" style="display: none; background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; border: 1px solid #ffcdd2;">
+                ⚠ Error creating account. Please try again.
+            </div>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Create a password">
+            </div>
+            <button type="submit" class="btn-primary" id="submitBtn">Sign Up</button>
+        </form>
+
+        <div class="footer-links">
+            Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWTYU8RSGGedJai69Wa3eOjQGtrvYEfeH0MI578Ort1UC-FUg2xwDa4x17G_-GxfHY/exec';
+
+        const form = document.getElementById('signupForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !phone || !password) {
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating account...';
+            submitBtn.style.opacity = '0.7';
+
+            const url = SCRIPT_URL + '?' + new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone,
+                password: password,
+                source: 'signup' // Optional, to distinguish in sheet
+            });
+
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+                .then(() => {
+                    successMsg.style.display = 'block';
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Sign Up';
+                    submitBtn.style.opacity = '1';
+                    
+                    // Optional redirect after success
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                })
+                .catch(() => {
+                    errorMsg.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Sign Up';
+                    submitBtn.style.opacity = '1';
+                });
+        });
+    </script>
+</body>
+</html>
