@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Yugam Academy - Placement & Upskilling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 48px;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .header-ctas {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary {
+            padding: 10px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 80px 48px;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-left h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero-left p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .hero-ctas a {
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-ctas .btn-primary {
+            padding: 14px 32px;
+        }
+
+        .hero-ctas .btn-secondary {
+            padding: 14px 32px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .live-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .stat-display {
+            display: flex;
+            gap: 40px;
+            margin: 24px 0;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ===== TICKER BAR ===== */
+        .ticker {
+            background: var(--primary);
+            color: white;
+            padding: 12px 48px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section {
+            padding: 80px 48px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===== METRICS BANNER ===== */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-subtitle {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* ===== COURSE CATALOG ===== */
+        .course-tabs {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            background: transparent;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: var(--text-dark);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .course-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 16px 16px 0 16px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: 700;
+            padding: 0 16px;
+            margin: 12px 0;
+            color: var(--text-dark);
+        }
+
+        .course-description {
+            font-size: 14px;
+            color: var(--text-light);
+            padding: 0 16px 16px 16px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            padding: 16px;
+            background: var(--bg-light);
+            margin: 0 16px;
+            border-radius: 8px;
+        }
+
+        .tech-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+        }
+
+        .course-footer {
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .course-footer a {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .course-footer .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+        }
+
+        .course-footer .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        /* ===== B2B SECTION ===== */
+        .b2b-section {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .pillar {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 24px;
+            border: 1px solid var(--border);
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .pillar h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .pillar p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .pillar-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            background: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .badge-placement {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: auto;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            color: var(--warning);;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            padding: 80px 48px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-header .section-tag {
+            margin: 0 auto 16px;
+            display: inline-block;
+        }
+
+        .form-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .form-header p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .form-submit {
+            flex: 1;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .form-submit.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .payment-btn {
+            flex: 1;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .payment-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .trust-strip {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .trust-strip span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .success-message, .error-message {
+            display: none;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            display: block;
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 48px 32px;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-link {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            header {
+                padding: 16px 24px;
+            }
+
+            .header-ctas {
+                gap: 8px;
+            }
+
+            .section {
+                padding: 48px 24px;
+            }
+
+            .hero {
+                padding: 48px 24px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-left h1 {
+                font-size: 36px;
+            }
+
+            .form-container {
+                padding: 40px 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-display {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .trust-strip {
+                gap: 12px;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-left h1 {
+                font-size: 28px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .trust-badges {
+                gap: 12px;
+            }
+
+            .badge {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Smart Yugam</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#institution">Institution</a></li>
+                    <li><a href="#success">Success</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <button class="btn-secondary">Sign In</button>
+                <button class="btn-primary">Get Free Audit</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div style="background: rgba(99, 102, 241, 0.1); padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 20px; color: var(--primary); font-size: 12px; font-weight: 700;">🚀 SMART YUGAM PLACEMENT SANDBOX</div>
+                <h1>Campus to Corporate Bridge — Your Launch Pad for Enterprise Careers</h1>
+                <p>Intensive bootcamps, live placement dashboards, and on-campus recruitment finishing schools. From aptitude drills to full-stack deployments — we bridge the gap between college coursework and corporate expectations.</p>
+                <div class="hero-ctas">
+                    <a href="#form" class="btn-primary" style="display: inline-flex; gap: 8px; align-items: center;">Explore Programs →</a>
+                    <a href="#form" class="btn-secondary" style="display: inline-flex; gap: 8px; align-items: center;">📞 Schedule Demo</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="badge">
+                        <div class="badge-icon">✓</div>
+                        <span>500+ Placements</span>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">✓</div>
+                        <span>12,000+ Course Hours</span>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">✓</div>
+                        <span>6 Course Tracks</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="dashboard-card">
+                    <div class="dashboard-header">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="display: inline-block; width: 12px; height: 12px; background: var(--success); border-radius: 50%;"></span>
+                            <span style="font-weight: 600; font-size: 13px;">Live Placements Feed</span>
+                        </div>
+                        <div class="live-badge">LIVE NOW</div>
+                    </div>
+                    <div class="stat-display">
+                        <div class="stat">
+                            <div class="stat-number">87%</div>
+                            <div class="stat-label">Placement Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">6.2 LPA</div>
+                            <div class="stat-label">Average Offer</div>
+                        </div>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <div style="font-size: 12px; color: var(--text-light); font-weight: 600; margin-bottom: 12px;">Recent Placements</div>
+                        <div style="padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px;">
+                            <strong>Vignesh R</strong> placed at Accenture as Digital Specialist Engineer
+                        </div>
+                        <div style="padding: 12px 0; font-size: 13px;">
+                            <strong>Priya M</strong> placed at Cognizant GenC with ₹8.5 LPA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS SECTION -->
+    <section class="section">
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-number">500+</div>
+                <div class="metric-label">Placements Delivered</div>
+                <div class="metric-subtitle">Across Fortune 500 & Startups</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">12,000+</div>
+                <div class="metric-label">Hours of Content</div>
+                <div class="metric-subtitle">Live labs, projects, mock interviews</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">87%</div>
+                <div class="metric-label">Placement Success Rate</div>
+                <div class="metric-subtitle">Industry-leading conversion</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">₹6.2 LPA</div>
+                <div class="metric-label">Average Offer</div>
+                <div class="metric-subtitle">Entry to mid-level roles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSE CATALOG -->
+    <section class="section" id="programs">
+        <div class="section-header">
+            <div class="section-tag">🎓 Dedicated Course Catalog</div>
+            <h2>Master Industry-Grade Skills in 6 Specialized Tracks</h2>
+            <p>From full-stack architecture to generative AI orchestration, each program pairs deep technical fundamentals with live placement bootcamps.</p>
+        </div>
+
+        <div class="course-tabs">
+            <button class="tab-btn active">All Tracks</button>
+            <button class="tab-btn">Engineering</button>
+            <button class="tab-btn">AI & Data Science</button>
+            <button class="tab-btn">Design & CAD</button>
+        </div>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <span class="course-badge">8 Weeks</span>
+                <h3 class="course-title">Java Full Stack Development</h3>
+                <p class="course-description">End-to-end enterprise software architecture. Covers object-oriented programming, modern containerization, and relational data layers.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Tech Stack Mastered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-badge">8 Weeks</span>
+                <h3 class="course-title">Python Full Stack Development</h3>
+                <p class="course-description">Rapid API architecture and responsive web suites utilizing asynchronous modern Python engines with reactive interfaces.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Tech Stack Mastered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-badge">6 Weeks</span>
+                <h3 class="course-title">Generative AI & Prompt Engineering</h3>
+                <p class="course-description">Next-gen artificial intelligence orchestration. Build customized retrieval augmented generation (RAG) and autonomous LLM agents.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Tech Stack Mastered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Vector DB</span>
+                        <span class="tech-tag">Fine-tuning</span>
+                        <span class="tech-tag">Prompt Ops</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-badge">10 Weeks</span>
+                <h3 class="course-title">UI/UX Development & Design</h3>
+                <p class="course-description">Transform conceptual product thinking into high-conversion user journeys, interactive Figma prototypes, and clean atomic design tokens.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Tech Stack Mastered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Responsive CSS</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Web Animation</span>
+                        <span class="tech-tag">Design Systems</span>
+                        <span class="tech-tag">Prototyping</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-badge">12 Weeks</span>
+                <h3 class="course-title">CAD / Engineering Design</h3>
+                <p class="course-description">Industrial grade physical modeling for Mechanical, Mechatronics, and Civil students. Parametric 3D drafting and tolerance analysis.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Tech Stack Mastered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SolidWorks</span>
+                        <span class="tech-tag">FEA</span>
+                        <span class="tech-tag">GD&T</span>
+                        <span class="tech-tag">CFD</span>
+                        <span class="tech-tag">Drafting</span>
+                        <span class="tech-tag">Simulation</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="course-badge">4 Weeks</span>
+                <h3 class="course-title">Aptitude & Campus Recruitment (CRT)</h3>
+                <p class="course-description">Comprehensive readiness drill for corporate entrance evaluations. Speed arithmetic shortcuts, logical deductive matrices, and interview simulations.</p>
+                <div class="tech-stack">
+                    <div class="tech-label">Modules Covered</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Speed Math</span>
+                        <span class="tech-tag">Logical Reasoning</span>
+                        <span class="tech-tag">Verbal Ability</span>
+                        <span class="tech-tag">Mock Interviews</span>
+                        <span class="tech-tag">Puzzles</span>
+                        <span class="tech-tag">Resume Build</span>
+                    </div>
+                </div>
+                <div class="course-footer">
+                    <a href="#form" class="btn-primary">Enroll Now</a>
+                    <a href="#" class="btn-secondary">View Syllabus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B INSTITUTIONAL SECTION -->
+    <section class="section b2b-section" id="institution">
+        <div class="section-header">
+            <div class="section-tag">🏢 Smart Yugam for Colleges</div>
+            <h2>Institutional Partnerships That Guarantee Placements</h2>
+            <p>We integrate directly into your campus curriculum with dedicated labs, faculty upskilling, and guaranteed corporate recruitment drives.</p>
+        </div>
+
+        <div style="max-width: 1280px; margin: 0 auto; text-align: right; margin-bottom: 40px;">
+            <a href="#form" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">Schedule MoU Discussion →</a>
+        </div>
+
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-icon">📚</div>
+                <h3>On-Campus Placement Bootcamps</h3>
+                <p>Intensive 15 to 30-day finishing school sprints tailored to clear imminent campus drives. Real coding assessments, mock technical panels, and immediate resume tuning.</p>
+                <a href="#" class="pillar-link">Learn More →</a>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">👨‍🏫</div>
+                <h3>Faculty Development Programs (FDP)</h3>
+                <p>Equip professors and lecturers with enterprise skillsets across Generative AI, Cloud orchestration, Modern DevOps, and applied UI/UX design workflows.</p>
+                <a href="#" class="pillar-link">Learn More →</a>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🎯</div>
+                <h3>Company-Specific CRT Modules</h3>
+                <p>Customized testing simulators calibrated for TCS NQT, Cognizant GenC, Wipro Elite, Accenture, and Zoho Level-2 Problem Solving rounds.</p>
+                <a href="#" class="pillar-link">Learn More →</a>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🤝</div>
+                <h3>Formal Long-Term MoUs</h3>
+                <p>Semester-embedded credit courses, dedicated Smart Yugam COE Labs inside your institution campus, and guaranteed placement drive invitations.</p>
+                <a href="#" class="pillar-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section" id="success">
+        <div class="section-header">
+            <div class="section-tag">⭐ Placement & Student Success Wall</div>
+            <h2>500+ Student Stories, 87% Placement Rate</h2>
+            <p>Real transformations from campus to corporate roles across India's leading technology and financial services companies.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info" style="flex: 1;">
+                        <h4>Vignesh Ramanathan</h4>
+                        <p>CS, Anna University</p>
+                    </div>
+                    <div class="badge-placement">Accenture</div>
+                </div>
+                <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">Digital Specialist Engineer</div>
+                    <div style="font-size: 13px; color: var(--text-light);">₹6.8 LPA</div>
+                </div>
+                <p class="testimonial-text">"Smart Yugam's live coding rounds and Spring Boot architectural sessions made the technical hackathon feel natural. Cleared the Digital Specialist Engineer track in my very first attempt!"</p>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info" style="flex: 1;">
+                        <h4>Priya Mohan</h4>
+                        <p>ECE, NIT Trichy</p>
+                    </div>
+                    <div class="badge-placement">Cognizant</div>
+                </div>
+                <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">GenC Elevate</div>
+                    <div style="font-size: 13px; color: var(--text-light);">₹8.5 LPA</div>
+                </div>
+                <p class="testimonial-text">"Coming from an ECE background, I was intimidated by complex data structures. Smart Yugam's mentorship bridged that gap seamlessly with structured problem-solving drills."</p>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info" style="flex: 1;">
+                        <h4>Arun Joshi</h4>
+                        <p>Mechanical Eng., VIT</p>
+                    </div>
+                    <div class="badge-placement">Bosch</div>
+                </div>
+                <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">CAD Design Engineer</div>
+                    <div style="font-size: 13px; color: var(--text-light);">₹6.5 LPA</div>
+                </div>
+                <p class="testimonial-text">"The GD&T and SolidWorks industry models taught at Smart Yugam were exactly what the technical interview committee tested. I didn't need any additional off-campus prep."</p>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info" style="flex: 1;">
+                        <h4>Deepa Sharma</h4>
+                        <p>CSE, BITS Pilani</p>
+                    </div>
+                    <div class="badge-placement">Cognizant</div>
+                </div>
+                <div style="background: var(--bg-light); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <div style="font-weight: 700; margin-bottom: 4px; color: var(--text-dark);">GenC Elevate</div>
+                    <div style="font-size: 13px; color: var(--text-light);">₹9.2 LPA</div>
+                </div>
+                <p class="testimonial-text">"The Aptitude speed math techniques and Full-stack live projects gave me the dual advantage needed to clear Cognizant GenC Elevate with an upgraded salary tier."</p>
+                <div class="testimonial-rating">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="form-section" id="form">
+        <div class="form-container">
+            <div class="form-header">
+                <div class="section-tag">📋 Start Your Journey Today</div>
+                <h2>Get Expert-Guided Audit & Mentorship</h2>
+                <p>Join 12,000+ students who transformed their careers. Unlock your potential with Smart Yugam's specialized placement programs.</p>
+            </div>
+
+            <form id="leadForm">
+                <div id="successMessage" class="success-message">✓ Thank you! We'll contact you within 24 hours.</div>
+                <div id="errorMessage" class="error-message">⚠ Error submitting form. Please try again.</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">WhatsApp Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98400 00000" required>
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="form-submit">Get Free Audit</button>
+                    <a href="https://payments.cashfree.com/forms/getaudit" target="_blank" class="payment-btn">💳 Pay for 1 Rupee Audit</a>
+                </div>
+
+                <div class="trust-strip">
+                    <span>🔒 Secure & encrypted</span>
+                    <span>•</span>
+                    <span>✓ No spam</span>
+                    <span>•</span>
+                    <span>⚡ 24-hour response</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Smart Yugam Academy</h3>
+                <p>Empowering 10,000+ students across India to land corporate careers through intensive placement bootcamps, mentorship, and guaranteed job placements.</p>
+                <div class="footer-link">
+                    <span>📍</span>
+                    <span>Plot 123, Tech Park, Coimbatore, Tamil Nadu 641040</span>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Programs</h4>
+                <a href="#">Full Stack Engineering</a>
+                <a href="#">Data Science & AI</a>
+                <a href="#">Cloud DevOps</a>
+                <a href="#">UI/UX Design</a>
+                <a href="#">Aptitude Training</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Institution</h4>
+                <a href="#">College Tie-Ups</a>
+                <a href="#">Campus MoU</a>
+                <a href="#">Success Wall</a>
+                <a href="#">Faculty Programs</a>
+                <a href="#">Apply Next Cohort</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Campus Office</h4>
+                <div class="footer-link">
+                    <span>📍</span>
+                    <div>
+                        <div>Plot 123, Tech Park</div>
+                        <div>Coimbatore, TN 641040</div>
+                    </div>
+                </div>
+                <div class="footer-link">
+                    <span>📧</span>
+                    <div>hello@smartyugam.com</div>
+                </div>
+                <div class="footer-link">
+                    <span>📱</span>
+                    <div>+91 8940 000 001</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2025 Smart Yugam Academy. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <span>•</span>
+                <a href="#">Terms of Service</a>
+                <span>•</span>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWTYU8RSGGedJai69Wa3eOjQGtrvYEfeH0MI578Ort1UC-FUg2xwDa4x17G_-GxfHY/exec';
+
+        const form = document.getElementById('leadForm');
+        const submitBtn = form.querySelector('.form-submit');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Validate
+            if (!name || !email || !phone) {
+                errorMsg.textContent = '⚠ Please fill all required fields.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Submitting...';
+
+            // Build URL with query parameters
+            const url = SCRIPT_URL + '?' + new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            });
+
+            // Critical: Use GET with no-cors, no .then(res => res.json())
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => showSuccess())
+            .catch(() => showError());
+        });
+
+        function showSuccess() {
+            successMsg.style.display = 'block';
+            errorMsg.style.display = 'none';
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            submitBtn.textContent = 'Get Free Audit';
+            
+            // Scroll to message
+            setTimeout(() => {
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function showError() {
+            errorMsg.style.display = 'block';
+            successMsg.style.display = 'none';
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            submitBtn.textContent = 'Get Free Audit';
+            
+            // Scroll to message
+            setTimeout(() => {
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
