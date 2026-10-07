@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Full Stack Development - 8 Week Lesson Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #9B1C3D 0%, #6B1428 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(155, 28, 61, 0.2);
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .overview {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid #F4B644;
+        }
+
+        .overview h2 {
+            color: #9B1C3D;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .overview-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .overview-item strong {
+            color: #9B1C3D;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .weeks-container {
+            display: grid;
+            gap: 30px;
+        }
+
+        .week-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(155, 28, 61, 0.1);
+            transition: all 0.3s;
+        }
+
+        .week-card:hover {
+            border-color: #9B1C3D;
+            box-shadow: 0 8px 25px rgba(155, 28, 61, 0.15);
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #9B1C3D 0%, #6B1428 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .week-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .week-duration {
+            background: rgba(244, 182, 68, 0.9);
+            color: #6B1428;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .week-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #9B1C3D;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '▸';
+            color: #F4B644;
+            font-size: 24px;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .topic-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .topic-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #F4B644;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .tech-badge {
+            background: #f0f0f0;
+            border: 1px solid #d0d0d0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9B1C3D;
+        }
+
+        .tech-badge.primary {
+            background: rgba(155, 28, 61, 0.1);
+            border-color: #9B1C3D;
+        }
+
+        .tech-badge.secondary {
+            background: rgba(244, 182, 68, 0.1);
+            border-color: #F4B644;
+            color: #B8860B;
+        }
+
+        .objectives {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border-left: 4px solid #F4B644;
+        }
+
+        .objectives strong {
+            display: block;
+            color: #9B1C3D;
+            margin-bottom: 10px;
+        }
+
+        .learning-outcomes {
+            background: rgba(244, 182, 68, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #F4B644;
+        }
+
+        .learning-outcomes strong {
+            display: block;
+            color: #9B1C3D;
+            margin-bottom: 10px;
+        }
+
+        .learning-outcomes ul {
+            margin-left: 20px;
+        }
+
+        .learning-outcomes li {
+            margin: 5px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            margin-top: 50px;
+            border-top: 2px solid #9B1C3D;
+        }
+
+        .footer h3 {
+            color: #9B1C3D;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #9B1C3D;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6B1428;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 28, 61, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #9B1C3D;
+            border: 2px solid #9B1C3D;
+        }
+
+        .btn-secondary:hover {
+            background: #9B1C3D;
+            color: white;
+        }
+
+        .project-box {
+            background: linear-gradient(135deg, rgba(244, 182, 68, 0.1) 0%, rgba(155, 28, 61, 0.05) 100%);
+            border: 2px solid #F4B644;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .project-box strong {
+            color: #9B1C3D;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            .week-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ Java Full Stack Development</h1>
+            <p>Comprehensive 8-Week Curriculum for Enterprise Software Development</p>
+        </header>
+
+        <div class="overview">
+            <h2>Program Overview</h2>
+            <p style="margin-bottom: 20px;">Master enterprise-grade Java development with a focus on modern architecture patterns, cloud deployment, and containerization. This intensive 8-week program equips you with skills to build scalable, production-ready applications.</p>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <strong>Duration</strong>
+                    8 Weeks
+                </div>
+                <div class="overview-item">
+                    <strong>Format</strong>
+                    Hands-on Development
+                </div>
+                <div class="overview-item">
+                    <strong>Core Focus</strong>
+                    Enterprise Architecture
+                </div>
+                <div class="overview-item">
+                    <strong>Outcome</strong>
+                    Full Stack Developer
+                </div>
+            </div>
+        </div>
+
+        <div class="weeks-container">
+            <!-- WEEK 1 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 1: Java Fundamentals & OOP Mastery</span>
+                    <span class="week-duration">Days 1-5</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Java syntax, data types, and operators</li>
+                            <li>Object-Oriented Programming (Classes, Objects, Inheritance)</li>
+                            <li>Polymorphism, Encapsulation, and Abstraction</li>
+                            <li>Collections Framework (Lists, Sets, Maps)</li>
+                            <li>Exception Handling and Debugging</li>
+                            <li>File I/O and Streams</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">Java 17+</span>
+                            <span class="tech-badge primary">Maven</span>
+                            <span class="tech-badge primary">IDE Setup</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Write well-structured Java applications using OOP principles</li>
+                            <li>Manage project dependencies with Maven</li>
+                            <li>Implement proper error handling mechanisms</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Student Management System</strong>
+                        Create a console application using collections and OOP to manage student records.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 2 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 2: Spring Framework & Spring Boot</span>
+                    <span class="week-duration">Days 6-10</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Spring Framework Architecture</li>
+                            <li>Dependency Injection and IoC Container</li>
+                            <li>Spring Boot Auto-configuration</li>
+                            <li>Building RESTful APIs with Spring Web</li>
+                            <li>Request/Response Handling</li>
+                            <li>Application Properties and Configuration</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">Spring Boot 3.x</span>
+                            <span class="tech-badge primary">Spring Web MVC</span>
+                            <span class="tech-badge secondary">REST</span>
+                            <span class="tech-badge secondary">Postman</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Create production-ready Spring Boot applications</li>
+                            <li>Implement scalable REST APIs</li>
+                            <li>Master dependency injection patterns</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Todo REST API</strong>
+                        Build a complete REST API with Create, Read, Update, Delete operations using Spring Boot.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 3 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 3: Data Persistence & Relational Databases</span>
+                    <span class="week-duration">Days 11-15</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>SQL Fundamentals and Database Design</li>
+                            <li>PostgreSQL Setup and Configuration</li>
+                            <li>Spring Data JPA and Hibernate ORM</li>
+                            <li>Entity Relationships (One-to-One, One-to-Many, Many-to-Many)</li>
+                            <li>JPQL and Native Queries</li>
+                            <li>Transaction Management</li>
+                            <li>Connection Pooling and Performance Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">PostgreSQL</span>
+                            <span class="tech-badge primary">Hibernate/JPA</span>
+                            <span class="tech-badge primary">Spring Data JPA</span>
+                            <span class="tech-badge secondary">DBeaver</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Design and implement normalized database schemas</li>
+                            <li>Master ORM concepts and Hibernate mapping</li>
+                            <li>Optimize database queries for performance</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: E-commerce Product Catalog</strong>
+                        Develop a REST API with complex data relationships (Products, Categories, Orders, Users).
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 4 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 4: Security & Authentication</span>
+                    <span class="week-duration">Days 16-20</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Spring Security Framework</li>
+                            <li>Authentication & Authorization</li>
+                            <li>JWT (JSON Web Tokens)</li>
+                            <li>OAuth 2.0 and OpenID Connect</li>
+                            <li>Password Encryption and Hashing</li>
+                            <li>CORS and Security Headers</li>
+                            <li>Role-Based Access Control (RBAC)</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">Spring Security</span>
+                            <span class="tech-badge primary">JWT</span>
+                            <span class="tech-badge secondary">BCrypt</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Implement secure authentication mechanisms</li>
+                            <li>Protect APIs against common vulnerabilities</li>
+                            <li>Manage user roles and permissions effectively</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Secure User Management API</strong>
+                        Add JWT-based authentication and authorization to the e-commerce API.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 5 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 5: Microservices Architecture</span>
+                    <span class="week-duration">Days 21-25</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Microservices Design Principles</li>
+                            <li>Service Decomposition Strategies</li>
+                            <li>Inter-service Communication (REST, Messaging)</li>
+                            <li>Service Discovery and Load Balancing</li>
+                            <li>API Gateway Implementation</li>
+                            <li>Distributed Tracing and Logging</li>
+                            <li>Circuit Breaker Pattern</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">Spring Cloud</span>
+                            <span class="tech-badge primary">Netflix Eureka</span>
+                            <span class="tech-badge primary">Hystrix</span>
+                            <span class="tech-badge secondary">RabbitMQ</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Design scalable microservices architectures</li>
+                            <li>Implement service-to-service communication</li>
+                            <li>Build resilient systems with circuit breakers</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Decompose Monolith into Microservices</strong>
+                        Split the e-commerce application into User Service, Product Service, and Order Service.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 6 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 6: Containerization with Docker</span>
+                    <span class="week-duration">Days 26-30</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Docker Basics and Architecture</li>
+                            <li>Writing Dockerfiles for Spring Boot Apps</li>
+                            <li>Docker Images and Container Management</li>
+                            <li>Docker Networking and Volumes</li>
+                            <li>Docker Compose for Multi-container Applications</li>
+                            <li>Container Registry (Docker Hub, ECR)</li>
+                            <li>Best Practices for Production Containers</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">Docker</span>
+                            <span class="tech-badge primary">Docker Compose</span>
+                            <span class="tech-badge secondary">PostgreSQL Container</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Containerize Java applications efficiently</li>
+                            <li>Orchestrate multi-container environments</li>
+                            <li>Deploy containers to cloud platforms</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Containerize Microservices</strong>
+                        Create Docker images and compose files for the microservices architecture.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 7 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 7: Cloud Deployment & AWS</span>
+                    <span class="week-duration">Days 31-35</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>AWS Fundamentals and Account Setup</li>
+                            <li>EC2 Instances for Application Hosting</li>
+                            <li>RDS for Managed PostgreSQL Databases</li>
+                            <li>Elastic Load Balancing (ALB/NLB)</li>
+                            <li>Auto Scaling Groups</li>
+                            <li>S3 for File Storage</li>
+                            <li>IAM Roles and Security Groups</li>
+                            <li>CloudWatch for Monitoring and Logging</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">AWS EC2</span>
+                            <span class="tech-badge primary">AWS RDS</span>
+                            <span class="tech-badge primary">AWS S3</span>
+                            <span class="tech-badge secondary">CloudWatch</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Deploy Java applications to AWS infrastructure</li>
+                            <li>Configure managed databases and load balancers</li>
+                            <li>Monitor application health and performance</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>📋 Mini Project: Deploy Full Stack to AWS</strong>
+                        Deploy containerized microservices with RDS database and load balancer on AWS.
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEEK 8 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <span class="week-title">Week 8: Advanced Topics & Capstone Project</span>
+                    <span class="week-duration">Days 36-40</span>
+                </div>
+                <div class="week-content">
+                    <div class="section">
+                        <div class="section-title">Core Topics</div>
+                        <ul class="topic-list">
+                            <li>Testing Strategies (Unit, Integration, E2E)</li>
+                            <li>JUnit 5 and Mockito</li>
+                            <li>CI/CD Pipeline Development</li>
+                            <li>Caching Strategies (Redis)</li>
+                            <li>API Documentation (Swagger/OpenAPI)</li>
+                            <li>Performance Tuning and Optimization</li>
+                            <li>Production Deployment Best Practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="tech-stack">
+                            <span class="tech-badge primary">JUnit 5</span>
+                            <span class="tech-badge primary">Mockito</span>
+                            <span class="tech-badge primary">Git/GitHub Actions</span>
+                            <span class="tech-badge secondary">Redis</span>
+                        </div>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <strong>Learning Outcomes:</strong>
+                        <ul>
+                            <li>Write comprehensive test suites for applications</li>
+                            <li>Implement automated CI/CD pipelines</li>
+                            <li>Optimize application performance in production</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-box">
+                        <strong>🚀 Capstone Project: Enterprise E-commerce Platform</strong>
+                        Build a complete, production-ready e-commerce platform with:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Microservices architecture (User, Product, Order, Payment services)</li>
+                            <li>PostgreSQL databases with complex relationships</li>
+                            <li>JWT authentication and role-based authorization</li>
+                            <li>Docker containerization with Docker Compose</li>
+                            <li>AWS deployment with EC2, RDS, and S3</li>
+                            <li>Comprehensive test coverage</li>
+                            <li>CI/CD pipeline with GitHub Actions</li>
+                            <li>API documentation and monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Ready to Master Java Full Stack Development?</h3>
+            <p>Start your journey to becoming an enterprise-grade full stack Java developer. Gain the skills employers are looking for with hands-on projects and real-world scenarios.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Enroll Now</button>
+                <button class="btn btn-secondary">View Syllabus</button>
+            </div>
+            <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #d0d0d0; font-size: 14px; color: #666;">
+                <p>Program Duration: 8 Weeks | Pace: Full-time (40 hours/week) | Mode: Online with Live Sessions</p>
+                <p style="margin-top: 10px;">Certification: Java Full Stack Developer Certificate upon completion</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
